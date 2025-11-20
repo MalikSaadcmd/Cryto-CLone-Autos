@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoAutos - Buy Cars with Crypto | Rent Cars with Crypto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img src="css/download12++.jpg" alt="CryptoAutos" class="logo-img">
+                <span>CryptoAutos</span>
+            </div>
+            
+           <!-- Main Navigation with Search Filters -->
+            <div class="main-nav">
+                <!-- Buy Dropdown -->
+                <div class="nav-item dropdown">
+                    <span class="nav-link">
+                        <i class="fas fa-car"></i>
+                        <span class="nav-text">Buy</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">All Cars</a>
+                        <a href="#" class="dropdown-item">Luxury Cars</a>
+                        <a href="#" class="dropdown-item">Sports Cars</a>
+                        <a href="#" class="dropdown-item">Electric Cars</a>
+                    </div>
+                </div>
+                
+                <!-- Advanced Search Filters -->
+                <div class="search-filters">
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Country</option>
+                            <option value="usa">USA</option>
+                            <option value="uae">UAE</option>
+                            <option value="uk">UK</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Make</option>
+                            <option value="tesla">Tesla</option>
+                            <option value="porsche">Porsche</option>
+                            <option value="mercedes">Mercedes</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Model</option>
+                            <option value="model-s">Model S</option>
+                            <option value="911">911</option>
+                            <option value="g-class">G-Class</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Year</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                        </select>
+                    </div>
+
+                    <!-- Search Button -->
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                        
+                    </button>
+                </div>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- WhatsApp Button -->
+                <button class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span class="btn-text">WhatsApp</span>
+                </button>
+                
+                <!-- Currency Dropdown -->
+                <div class="dropdown">
+                    <span class="dropdown-toggle">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span class="dropdown-text">USD</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">EUR</a>
+                        <a href="#" class="dropdown-item">GBP</a>
+                        <a href="#" class="dropdown-item">BTC</a>
+                    </div>
+                </div>
+                
+                <!-- Menu Dropdown -->
+                <div class="dropdown">
+                    <span class="dropdown-toggle">
+                        <i class="fas fa-bars"></i>
+                        <span class="dropdown-text">Menu</span>
+                    </span>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Home</a>
+                        <a href="#" class="dropdown-item">Buy</a>
+                        <a href="#" class="dropdown-item">Rent</a>
+                        <a href="#" class="dropdown-item">Sell</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Search Section -->
+        <div class="mobile-search-section">
+            <div class="mobile-search-filters">
+                <div class="filter-row">
+                    <select class="filter-select mobile">
+                        <option value="">Country</option>
+                        <option value="usa">USA</option>
+                        <option value="uae">UAE</option>
+                    </select>
+                    <select class="filter-select mobile">
+                        <option value="">Make</option>
+                        <option value="tesla">Tesla</option>
+                        <option value="porsche">Porsche</option>
+                    </select>
+                </div>
+                <div class="filter-row">
+                    <select class="filter-select mobile">
+                        <option value="">Model</option>
+                        <option value="model-s">Model S</option>
+                        <option value="911">911</option>
+                    </select>
+                    <select class="filter-select mobile">
+                        <option value="">Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </div>
+                <button class="search-btn mobile">
+                    <i class="fas fa-search"></i>
+                    Search Cars
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero-video">
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="bck.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="hero-content">
+            <h1>WELCOME TO</h1>
+            <h1>CRYPTOAUTOS </h1>
+            <p style="text-align: center"><span style="display:block;text-align: center;">The fast, secure and seamless payments platform that</span><span style="display: block;text-align: center;">connects car buyers with Crypto to a massive marketplace of</span> <span style="display: block;text-align: center;"> automotive dealer partners across the UK and Europe.</span></p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Explore All Cars</button>
+                <button class="btn-secondary">Rent a Luxruy Car</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- How It Works Section -->
+        <section class="section how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>How It Works</h2>
+                </div>
+                
+                <div class="works-grid">
+                    <!-- First Box with TOP-LEFT clip-path -->
+                    <div class="work-box clip-path-top-left">
+                        
+                        <div class="step-number">1</div>
+                        <h3>Connect Your Wallet</h3>
+                        <p><strong>Connect your wallet using our secure & simple process</strong></p>
+                    </div>
+                    
+                    <div class="work-box">
+                        <div class="step-number">2</div>
+                        <h3>Choose Your Vehicle</h3>
+                        <p>Browse our extensive collection of luxury vehicles</p>
+                    </div>
+                    
+                    <div class="work-box">
+                        <div class="step-number">3</div>
+                        <h3>Complete Your Deal</h3>
+                        <p>Finalize your purchase or rental with crypto payment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Stock Section -->
+        <section class="section popular-stock">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Popular Stock</h2>
+                    <div class="section-nav">
+                        <button class="nav-arrow"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-arrow"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="cars-grid">
+                    <div class="car-card">
+                        <div class="car-image">
+                            <img src="css/tesla.jpg" alt="Tesla">
+                            <div class="crypto-price">2.5 ETH</div>
+                        </div>
+                        <div class="car-info">
+                            <h3>Tesla Model S Plaid</h3>
+                            <p>2023 • Electric • 5,000 miles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="car-card">
+                        <div class="car-image">
+                            <img src="css/911.jpg" alt="Porsche">
+                            <div class="crypto-price">4.8 ETH</div>
+                        </div>
+                        <div class="car-info">
+                            <h3>Porsche 911 Turbo S</h3>
+                            <p>2022 • Sports • 8,200 miles</p>
+                        </div>
+                    </div>
+                    
+                    <div class="car-card">
+                        <div class="car-image">
+                            <img src="css/rangerover.jpg" alt="Range Rover">
+                            <div class="crypto-price">3.2 ETH</div>
+                        </div>
+                        <div class="car-info">
+                            <h3>Range Rover Autobiography</h3>
+                            <p>2023 • SUV • 3,500 miles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Rental Available Section -->
+        <section class="section new-rental">
+            <div class="container">
+                <div class="section-header">
+                    <h2>New Rental Available</h2>
+                    <div class="section-nav">
+                        <button class="nav-arrow"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-arrow"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="rental-cars-grid">
+                    <div class="rental-car-card">
+                        <div class="car-image">
+                            <img src="css/lambo.jpg" alt="Lamborghini">
+                            <div class="crypto-price">0.5 ETH/day</div>
+                        </div>
+                        <div class="car-info">
+                            <h3>Lamborghini Huracan</h3>
+                            <p>2023 • Sports • Dubai</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rental-car-card">
+                        <div class="car-image">
+                            <img src="css/ferrari.jpg" alt="Ferrari">
+                            <div class="crypto-price">0.45 ETH/day</div>
+                        </div>
+                        <div class="car-info">
+                            <h3>Ferrari 488 GTB</h3>
+                            <p>2022 • Sports • Miami</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rental-car-card">
+                        <div class="car-image">
+                            <img src="css/teslaa.jpg" alt="Tesla">
+                            <div class="crypto-price">0.3 ETH/day</div>
+                        </div>
+                        <div class="car-info">
+                            <h3>Tesla Model X</h3>
+                            <p>2023 • Electric • London</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rental-car-card">
+                        <div class="car-image">
+                            <img src="css/g63.jpg" alt="Mercedes">
+                            <div class="crypto-price">0.4 ETH/day</div>
+                        </div>
+                        <div class="car-info">
+                            <h3>Mercedes G63 AMG</h3>
+                            <p>2023 • SUV • Dubai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews Section -->
+        <section class="section customer-reviews">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What Our Customers Say</h2>
+                </div>
+                
+                <div class="reviews-grid">
+                    <!-- First Box with TOP-LEFT clip-path -->
+                    <div class="review-box clip-path-top-left">
+                        <div class="star-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="customer-info">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Customer">
+                            <div>
+                                <h4>John Smith</h4>
+                                <p>Purchased Tesla Model S</p>
+                            </div>
+                        </div>
+                        <p style="color: aliceblue;"></p>"Amazing experience buying my Tesla with Bitcoin! The process was smooth and secure."</p>
+                    </div>
+                    
+                    <div class="review-box">
+                        <div class="star-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="customer-info">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Customer">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <p>Rented Porsche 911</p>
+                            </div>
+                        </div>
+                        <p>"Rented a Porsche for the weekend using Ethereum. Best rental experience ever!"</p>
+                    </div>
+                    
+                    <div class="review-box">
+                        <div class="star-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="customer-info">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Customer">
+                            <div>
+                                <h4>Mike Chen</h4>
+                                <p>Sold Mercedes G-Class</p>
+                            </div>
+                        </div>
+                        <p>"Sold my Mercedes through CryptoAutos and received payment in crypto instantly!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explore Rental Brands Section -->
+        <section class="section rental-brands">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Explore Rental Brands</h2>
+                    <div class="section-nav">
+                        <button class="nav-arrow"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-arrow"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="brands-grid">
+                  <div class="brands-track">
+                        <div class="brand-card">
+                            <div class="brand-logo" style="background-image: url(css/tesla\ logo.jpg);">
+                                
+                            </div>
+                    <div class="brand-name">Tesla</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/bmwlogo.png);">
+                        
+                    </div>
+                    <div class="brand-name">BMW</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/mercedeslogooo.jpg);">
+                        
+                    </div>
+                    <div class="brand-name">Mercedes</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/audii.png);">
+                        
+                    </div>
+                    <div class="brand-name">Audi</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/porschee.jpg);">
+                        
+                    </div>
+                    <div class="brand-name">Porsche</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/lamboo.jpg);">
+                        
+                    </div>
+                    <div class="brand-name">Lamborghini</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/ferrarii.png);">
+                        
+                    </div>
+                    <div class="brand-name">Ferrari</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/ford.jpg);">
+                        
+                    </div>
+                    <div class="brand-name">Ford</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/cheverlot.jpg);">
+                        
+                    </div>
+                    <div class="brand-name">Chevrolet</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/toyota.jpg);">
+                        
+                    </div>
+                    <div class="brand-name">Toyota</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/honda.jpg);">
+                        
+                    </div>
+                    <div class="brand-name">Honda</div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo" style="background-image: url(css/nissan.jpg);">
+                        
+                    </div>
+                    <div class="brand-name">Nissan</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="css/download12++.jpg" alt="CryptoAutos">
+                    <span>CryptoAutos</span>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#">Cars for Sale</a>
+                    <a href="#">Bikes for Sale</a>
+                    <a href="#">How it Works</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                    <a href="#">FAQs</a>
+                    <a href="#">Live Rates</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 CryptoAutos. All rights reserved.</p>
+                <p>CryptoAutos is authorized by the Financial Intelligence Unit (FIU) to offer cryptocurrency services under registration number 306351393. Please note that CryptoAutos does not function as a cryptocurrency financial advisor. All information provided on our site reflects our own research or opinions and should not be construed as personal investment advice. We disclaim any responsibility for your cryptocurrency buying, selling, or trading decisions, and we do not offer advisory services in this regard. DigiBlaze UAB is not authorized by the Financial Conduct Authority (FCA) to communicate financial promotions in the UK as part of its business operations. Due to the inherent risks associated with cryptocurrency, please be vigilant against scammers who may attempt to impersonate our company to hack or steal your assets. We will never solicit personal information through social media. If you have any doubts or concerns, please contact us directly via our official email address at hello@cryptoautos.com</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const mobileSearch = document.querySelector('.mobile-search-section');
+            mobileSearch.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

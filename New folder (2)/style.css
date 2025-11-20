@@ -1,0 +1,1200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #2563eb;
+    --primary-blue: #e77039;
+    --dark-bg: #111b35;
+    --darker-bg: #121110;
+    --card-bg: #1e293b;
+    --text-white: #f8fafc;
+    --text-gray: #94a3b8;
+    --border-dark: #334155;
+    --whatsapp-green: #25d366;
+    --star-green: #22c55e;
+    --pale-white: #f8fafc;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--darker-bg);
+    color: var(--text-white);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background:transparent;
+    backdrop-filter: blur(20px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-dark);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.logo-text {
+    display: inline;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
+/* Buy Dropdown */
+.nav-item {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--primary-light));
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.nav-text {
+    display: inline;
+}
+
+.nav-link i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .nav-link i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: 16px;
+    padding: 0.75rem;
+    min-width: 200px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    margin-top: 0.5rem;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--text-gray);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+
+/* Search Filters */
+.search-filters {
+    display: flex;
+    gap: 0.75rem;
+    background: var(--card-bg);
+    padding: 0.75rem;
+    border-radius: 50px;
+    border: 1px solid var(--border-dark);
+    align-items: center;
+    flex: 1;
+    max-width: 600px;
+}
+
+.filter-group {
+    position: relative;
+    flex: 1;
+    min-width: 120px;
+}
+
+.filter-select {
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    border: 1px solid var(--border-dark);
+    border-radius: 25px;
+    background: var(--dark-bg);
+    color: var(--text-white);
+    font-size: 0.9rem;
+    font-weight: 400;
+    cursor: pointer;
+    appearance: none;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.filter-select:hover {
+    border-color: var(--border-light);
+}
+
+.filter-group::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-gray);
+    pointer-events: none;
+    font-size: 0.8rem;
+}
+
+/* Search Button */
+.search-btn {
+    background: linear-gradient(135deg, var(--success-green), #34d399);
+    color: white;
+    border: none;
+    padding: 0.75rem 0.75rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    flex-shrink: 0;
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.btn-text {
+    display: inline;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    background: linear-gradient(135deg, var(--whatsapp-green), #34d399);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Currency and Menu Dropdowns */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--card-bg);
+    border-radius: 25px;
+    font-weight: 500;
+    color: var(--text-white);
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: 1px solid var(--border-dark);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.dropdown-toggle:hover {
+    border-color: var(--primary-blue);
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.dropdown-text {
+    display: inline;
+}
+
+.dropdown-toggle i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-toggle i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Mobile Search Section */
+.mobile-search-section {
+    display: none;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-dark);
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.mobile-search-section.active {
+    display: block;
+}
+
+.mobile-search-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.filter-row {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.filter-select.mobile {
+    flex: 1;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.search-btn.mobile {
+    width: 100%;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+/* Dropdown menus for right side */
+.header-actions .dropdown-menu {
+    left: auto;
+    right: 0;
+    border-radius: 16px;
+}
+
+/* Hero Section */
+.hero-video {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    margin-top: 80px;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #f59e0b, #eab308);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin: 1rem 0 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Sections */
+.section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.section-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-arrow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border-dark);
+    border-radius: 50%;
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-white);
+}
+
+/* How It Works Section */
+.how-it-works {
+    background: var(--darker-bg);
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.work-box {
+    background: white;
+    padding: 3rem 2rem 2rem;
+    border-radius: 12px;
+    position: relative;
+    text-align: center;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* CORRECT: TOP-LEFT clip-path - diagonal starts from top-left */
+.clip-path-top-left {
+    background-color: aliceblue;
+    color: rgb(12, 0, 0);
+    clip-path: polygon(0 19%, 200% -200%, 200% 200%, 0 100%);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--primary-blue);
+    color: rgb(227, 111, 28);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: rgb(12, 0, 0);
+    border: 4px solid var(--darker-bg);
+}
+
+.clip-path-top-left .step-number {
+    background: rgba(208, 92, 20, 0.93);
+}
+
+.work-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.clip-path-top-left h3 {
+    color: rgb(12, 0, 0);
+}
+
+.work-box p {
+    color: #010711;
+    line-height: 1.6;
+}
+
+.clip-path-top-left p {
+    color: rgba(10, 10, 10, 0.9);
+}
+
+/* Popular Stock Section */
+.popular-stock {
+    background: var(--darker-bg);
+}
+
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.car-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-dark);
+}
+
+.car-image {
+    position: relative;
+    height: 200px;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.crypto-price {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #f59e0b, #eab308);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.car-info {
+    padding: 1.5rem;
+}
+
+.car-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.car-info p {
+    color: var(--text-gray);
+}
+
+/* New Rental Available Section */
+.new-rental {
+    background: var(--darker-bg);
+}
+
+.rental-cars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.rental-car-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-dark);
+}
+
+/* Customer Reviews Section */
+.customer-reviews {
+    background: var(--darker-bg);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.review-box {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-dark);
+    position: relative;
+    min-height: 280px;
+}
+
+/* CORRECT: TOP-LEFT clip-path - diagonal starts from top-left */
+.review-box.clip-path-top-left {
+    background: var(--card-bg);
+    color: white;
+    clip-path: polygon(0 19%, 200% -200%, 200% 200%, 0 100%);
+}
+
+.star-rating {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.stars {
+    display: flex;
+    gap: 0.2rem;
+    color: var(--star-green);
+    font-size: 0.8rem;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0 1rem;
+}
+
+.customer-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.customer-info h4 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.customer-info p {
+    color: var(--text-gray);
+    font-size: 0.8rem;
+}
+
+.clip-path-top-left .customer-info p {
+    color: rgba(246, 240, 240, 0.8);
+}
+
+.review-box p:last-child {
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Explore Rental Brands Section */
+.rental-brands {
+    background: var(--darker-bg);
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    background-color: #010000;
+    border: 1px dotted black;
+    overflow: hidden; 
+    overflow-x: hidden;
+    overflow-wrap:normal
+  
+    
+    
+}
+
+.brand-item {
+    background: var(--card-bg);
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-dark);
+    font-weight: 600;
+    
+    
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%); /* Start at original position */
+  }
+  100% {
+    transform: translateX(-100%); /* Move to the left by 100% of content width */
+  }
+}
+ 
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .brands-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .brands-scroll-wrapper {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+
+        .brands-track {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
+            padding: 0 10px;
+        }
+
+        .brand-card {
+            flex: 0 0 auto;
+            width: 150px;
+            background-color: rgba(26, 26, 46, 0.7);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(58, 134, 255, 0.1);
+            cursor: pointer;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-logo {
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .brand-logo i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        .brand-name {
+            font-weight: 600;
+            color: var(--light);
+        }
+
+/* Footer */
+.footer {
+    background: var(--darker-bg);
+    border-top: 1px solid var(--border-dark);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-dark);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+/* ==================== */
+/* RESPONSIVE DESIGN */
+/* ==================== */
+
+@media (max-width: 1200px) {
+    .nav {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .search-filters {
+        gap: 0.5rem;
+    }
+    
+    .filter-select {
+        padding: 0.75rem 2rem 0.75rem 0.75rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .nav {
+        flex-wrap: wrap;
+    }
+    
+    .main-nav {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .search-filters {
+        flex-wrap: wrap;
+        width: 100%;
+        border-radius: 16px;
+    }
+    
+    .filter-group {
+        min-width: calc(50% - 0.5rem);
+    }
+    
+    .search-btn {
+        width: 100%;
+        justify-content: center;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo span {
+        display: none;
+    }
+    
+    .nav {
+        padding: 0.75rem 1rem;
+    }
+    
+    .main-nav {
+        gap: 1rem;
+    }
+    
+    .search-filters {
+        flex-direction: column;
+        border-radius: 16px;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .filter-select {
+        border-radius: 12px;
+    }
+    
+    .header-actions {
+        gap: 0.5rem;
+    }
+    
+    .whatsapp-btn span,
+    .dropdown-toggle span {
+        display: none;
+    }
+    
+    .whatsapp-btn,
+    .dropdown-toggle {
+        padding: 0.75rem;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem;
+    }
+    
+    .nav-link span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .main-nav {
+        order: 2;
+        margin-top: 0;
+    }
+    
+    .header-actions {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .logo {
+        order: 1;
+    }
+    
+    .search-filters {
+        border-radius: 12px;
+    }
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .works-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rental-cars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Large Desktop */
+@media (max-width: 1200px) {
+    .nav {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .search-filters {
+        gap: 0.5rem;
+    }
+    
+    .filter-select {
+        padding: 0.75rem 2rem 0.75rem 0.75rem;
+        min-width: 100px;
+    }
+}
+
+/* Desktop / Tablet */
+@media (max-width: 1024px) {
+    .nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .main-nav {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+        justify-content: flex-start;
+    }
+    
+    .search-filters {
+        flex-wrap: wrap;
+        width: 100%;
+        border-radius: 16px;
+        max-width: none;
+    }
+    
+    .filter-group {
+        min-width: calc(50% - 0.5rem);
+    }
+    
+    .search-btn {
+        width: 100%;
+        justify-content: center;
+        border-radius: 12px;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .nav {
+        padding: 0.75rem 1rem;
+        gap: 0.75rem;
+    }
+    
+    .logo-text {
+        display: none;
+    }
+    
+    .main-nav {
+        display: none; /* Hide main nav on mobile */
+    }
+    
+    .search-filters {
+        display: none; /* Hide desktop search on mobile */
+    }
+    
+    .header-actions {
+        gap: 0.5rem;
+        margin-left: auto;
+    }
+    
+    /* Hide text on buttons, show only icons */
+    .whatsapp-btn .btn-text,
+    .dropdown-toggle .dropdown-text {
+        display: none;
+    }
+    
+    .whatsapp-btn,
+    .dropdown-toggle {
+        padding: 0.75rem;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        justify-content: center;
+    }
+    
+    .whatsapp-btn {
+        background: var(--whatsapp-green);
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    /* Show mobile search section */
+    .mobile-search-section {
+        display: none;
+    }
+    
+    .mobile-search-section.active {
+        display: block;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .nav {
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+    }
+    
+    .logo {
+        font-size: 1.25rem;
+    }
+    
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .header-actions {
+        gap: 0.25rem;
+    }
+    
+    .whatsapp-btn,
+    .dropdown-toggle,
+    .mobile-menu-btn {
+        width: 40px;
+        height: 40px;
+        padding: 0.5rem;
+    }
+    
+    .mobile-search-filters {
+        gap: 0.75rem;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .filter-select.mobile {
+        padding: 0.875rem;
+    }
+    
+    .search-btn.mobile {
+        padding: 0.875rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+    .nav {
+        padding: 0.5rem;
+    }
+    
+    .logo-img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .whatsapp-btn,
+    .dropdown-toggle,
+    .mobile-menu-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}

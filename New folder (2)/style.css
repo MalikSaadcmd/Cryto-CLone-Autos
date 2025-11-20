@@ -6,7 +6,7 @@
 
 :root {
     --primary-blue: #2563eb;
-    --primary-blue: #e77039;
+    --primary-blue: #ca3625;
     --dark-bg: #111b35;
     --darker-bg: #121110;
     --card-bg: #1e293b;
@@ -416,7 +416,8 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 4.5rem;
     font-weight: 700;
     margin: 0;
     line-height: 1.1;
@@ -531,7 +532,7 @@ body {
     width: 40px;
     height: 40px;
     background: var(--primary-blue);
-    color: rgb(227, 111, 28);
+    color: rgb(208, 30, 24);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -542,7 +543,7 @@ body {
 }
 
 .clip-path-top-left .step-number {
-    background: rgba(208, 92, 20, 0.93);
+    background: rgba(204, 41, 16, 0.93);
 }
 
 .work-box h3 {
@@ -656,7 +657,7 @@ body {
     min-height: 280px;
 }
 
-/* CORRECT: TOP-LEFT clip-path - diagonal starts from top-left */
+/* TOP-LEFT clip-path - diagonal starts from top-left */
 .review-box.clip-path-top-left {
     background: var(--card-bg);
     color: white;
@@ -715,6 +716,8 @@ body {
 /* Explore Rental Brands Section */
 .rental-brands {
     background: var(--darker-bg);
+    overflow: hidden;
+    position: relative;
 }
 
 .brands-grid {
@@ -723,9 +726,19 @@ body {
     gap: 1rem;
     background-color: #010000;
     border: 1px dotted black;
-    overflow: hidden; 
-    overflow-x: hidden;
-    overflow-wrap:normal
+    overflow-x: scroll ;
+    padding-right: 17px; 
+    box-sizing: content-box;
+    position:relative;
+    }
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #09000000;
+
   
     
     
